@@ -8,3 +8,32 @@ body {
   margin: 200px;
   color: antiquewhite;
 }
+
+.container {
+  width: 40%;
+  height: 60px;
+  background-color: #ffffff;
+  margin: 17em;
+  margin-top: -9em;
+  border-style: none;
+  border-radius: 8px;
+  border: 3px solid;
+  margin-left: 25em;
+}
+
+.container input {
+  width: 98%;
+  padding-top: 17px;
+  border-style: none;
+}
+.container input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+::placeholder {
+  color: black;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}

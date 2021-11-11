@@ -3,8 +3,11 @@ import "./style.css";
 
 function Task() {
   return (
-    <div className="container">
+    <div>
       <div className="header">List-To-Do</div>
+      <div className="container">
+        <input type="text" placeholder="What needs to be accompliced?" />
+      </div>
     </div>
   );
 }
