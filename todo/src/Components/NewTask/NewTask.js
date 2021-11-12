@@ -1,9 +1,13 @@
 import React from "react";
 import "./style.css";
-import Task from "../Task";
+import { addNewTask } from "../Task";
 
 function CreateNewTask({ addNewTask }) {
-  return <div></div>;
+  return (
+    <div className="newTask-container">
+      <input type="text" />
+    </div>
+  );
 }
 
 export default CreateNewTask;
