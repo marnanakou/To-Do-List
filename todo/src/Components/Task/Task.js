@@ -26,13 +26,13 @@ function Task() {
   ]);
 
   const addNewTask = (title) => {
-    setTasks([...tasks, { title, completed: false }]);
+    setTasks([...tasks, { title: title, completed: false }]);
   };
 
   const [showNewTask, setShowNewTask] = useState(false);
 
   //the second container appears after the click on the 1st one
-  const ShowNewTaskAdded = () => {
+  const showNewTaskAdded = () => {
     setShowNewTask(true);
   };
 
@@ -40,19 +40,19 @@ function Task() {
     <div>
       <div className="header">List-To-Do</div>
       <div className="container">
-        <Task
+        <input
           type="text"
           placeholder="What needs to be accompliced?"
           value={addNewTask}
         />
       </div>
       <ul>
-        {tasks.map((tasks, index) => (
-          <li key={index} tasks={tasks}></li>
+        {tasks.map((el, index) => (
+          <li key={index}>{el.title}</li>
         ))}
       </ul>
       <div>
-        <button onClick={ShowNewTaskAdded}></button>
+        <button onClick={showNewTaskAdded}></button>
       </div>
     </div>
   );
