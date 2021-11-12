@@ -25,8 +25,8 @@ function Task() {
     },
   ]);
 
-  const addNewTask = () => {
-    setTasks([...tasks]);
+  const addNewTask = (title) => {
+    setTasks([...tasks, { title, completed: false }]);
   };
 
   const [showNewTask, setShowNewTask] = useState(false);
