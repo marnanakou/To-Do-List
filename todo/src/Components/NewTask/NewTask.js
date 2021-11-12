@@ -5,7 +5,10 @@ import { addNewTask } from "../Task";
 function CreateNewTask({ addNewTask }) {
   return (
     <div className="newTask-container">
-      <input type="text" />
+      <input
+        type="text"
+        //   value = {}
+      />
     </div>
   );
 }
