@@ -45,14 +45,14 @@ function Task() {
           placeholder="What needs to be accompliced?"
           value={addNewTask}
         />
-      </div>
-      <ul>
-        {tasks.map((el, index) => (
-          <li key={index}>{el.title}</li>
-        ))}
-      </ul>
-      <div>
-        <button onClick={showNewTaskAdded}></button>
+        <div className="tasks">
+          {tasks.map((el, index) => (
+            <li key={index}>{el.title}</li>
+          ))}
+        </div>
+        <div>
+          <button onClick={showNewTaskAdded}></button>
+        </div>
       </div>
     </div>
   );
