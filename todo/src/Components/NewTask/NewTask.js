@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.css";
-import { addNewTask } from "../Task";
 
 function CreateNewTask({ addNewTask }) {
   return (

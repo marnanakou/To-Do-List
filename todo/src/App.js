@@ -1,11 +1,11 @@
 import Task from "./Components/Task/Task";
-// import NewTask from "./Components/NewTask";
+import CreateNewTask from "./Components/NewTask/NewTask";
 
 function App() {
   return (
     <div className="App">
       <Task />
-      {/* <NewTask /> */}
+      <CreateNewTask />
     </div>
   );
 }
