@@ -14,9 +14,12 @@
   width: 98%;
   padding-top: 17px;
   border-style: none;
+  color: black;
+  font-size: 17px;
+  font-weight: bold;
 }
 
-.newTask-container input :focus {
+.newTask-container input:focus {
   outline: none;
-  box-shadow: none;
+  border: none;
 }
