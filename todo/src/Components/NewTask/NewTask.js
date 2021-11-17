@@ -12,7 +12,7 @@ function CreateNewTask({ addNewTask }) {
     // setValue(addNewTask);
   };
   return (
-    <div className="form">
+    <div className="newTask-container">
       <form onSubmit={handleSubmit}>
         <input
           type="text"

@@ -1,7 +1,18 @@
 import React, { useState } from "react";
 import "./style.css";
 
-function Task() {
+// function TaskToDo(task) {
+//   return (
+//     <div
+//       className="task"
+//       style={{ textDecoration: task.completed ? "line-through" : " " }}
+//     >
+//       {task.title}
+//     </div>
+//   );
+// }
+
+function TaskList() {
   const [tasks, setTasks] = useState([
     {
       title: "Go to the Gym",
@@ -25,37 +36,56 @@ function Task() {
     },
   ]);
 
-  const addNewTask = (title) => {
-    setTasks([...tasks, { title: title, completed: false }]);
+  // const [showNewTask, setShowNewTask] = useState(false);
+
+  // //add newTask
+  // const AddTask = (title) => {
+  //   setTasks([...tasks, { title: title, completed: false }]);
+  // };
+
+  //remove newTask
+  const RemoveTask = (e) => {
+    const updatedTasks = tasks.filter((el) => {
+      return el.title !== e.target.value;
+    });
+    setTasks(updatedTasks);
   };
 
-  const [showNewTask, setShowNewTask] = useState(false);
-
-  //the second container appears after the click on the 1st one
-  const showNewTaskAdded = () => {
-    setShowNewTask(true);
+  //remove all tasks
+  const RemoveAllTasks = () => {
+    setTasks([]);
   };
+  // //the second container appears after the click on the 1st one
+  // const showNewTaskAdded = () => {
+  //   addNewTask(value);
+  //   setShowNewTask(" ");
+  // };
 
   return (
     <div>
       <div className="header">List-To-Do</div>
       <div className="container">
-        <input
-          type="text"
-          placeholder="What needs to be accompliced?"
-          value={addNewTask}
-        />
+        <input type="text" placeholder="What needs to be accompliced?" />
         <div className="tasks">
-          {tasks.map((el, index) => (
-            <li key={index}>{el.title}</li>
+          {tasks.map((task, index) => (
+            <div>
+              <div>{task.title}</div>
+              <button value={task.title} onClick={RemoveTask}>
+                X
+              </button>
+            </div>
           ))}
         </div>
-        <div>
-          <button onClick={showNewTaskAdded}></button>
+        <div className="deleteButton">
+          {tasks.length !== 0 ? (
+            <button onClick={RemoveAllTasks}>Clear All The Tasks</button>
+          ) : (
+            <div />
+          )}
         </div>
       </div>
     </div>
   );
 }
 
-export default Task;
+export default TaskList;
