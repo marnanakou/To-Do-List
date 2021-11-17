@@ -55,6 +55,7 @@ function TaskList() {
   const RemoveAllTasks = () => {
     setTasks([]);
   };
+
   // //the second container appears after the click on the 1st one
   // const showNewTaskAdded = () => {
   //   addNewTask(value);
@@ -69,6 +70,12 @@ function TaskList() {
         <div className="tasks">
           {tasks.map((task, index) => (
             <div>
+              <input
+                type="checkbox"
+                className="checkbox"
+                // value={value}
+                // onClick={}
+              />
               <div>{task.title}</div>
               <button value={task.title} onClick={RemoveTask}>
                 X
