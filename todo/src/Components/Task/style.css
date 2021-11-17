@@ -37,3 +37,13 @@ body {
   font-weight: bold;
   text-align: center;
 }
+
+.deleteButton button {
+  margin: 3em;
+  margin-left: 13em;
+  text-transform: uppercase;
+  color: #5ab87d;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+}

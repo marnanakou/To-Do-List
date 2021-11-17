@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import "./style.css";
 
-function TaskToDo(task) {
-  return (
-    <div
-      className="task"
-      style={{ textDecoration: task.completed ? "line-through" : " " }}
-    >
-      {task.title}
-    </div>
-  );
-}
+// function TaskToDo(task) {
+//   return (
+//     <div
+//       className="task"
+//       style={{ textDecoration: task.completed ? "line-through" : " " }}
+//     >
+//       {task.title}
+//     </div>
+//   );
+// }
 
-function Task() {
+function TaskList() {
   const [tasks, setTasks] = useState([
     {
       title: "Go to the Gym",
@@ -36,12 +36,25 @@ function Task() {
     },
   ]);
 
-  // const addNewTask = (title) => {
+  // const [showNewTask, setShowNewTask] = useState(false);
+
+  // //add newTask
+  // const AddTask = (title) => {
   //   setTasks([...tasks, { title: title, completed: false }]);
   // };
 
-  // const [showNewTask, setShowNewTask] = useState(false);
+  //remove newTask
+  const RemoveTask = (e) => {
+    const updatedTasks = tasks.filter((el) => {
+      return el.title !== e.target.value;
+    });
+    setTasks(updatedTasks);
+  };
 
+  //remove all tasks
+  const RemoveAllTasks = () => {
+    setTasks([]);
+  };
   // //the second container appears after the click on the 1st one
   // const showNewTaskAdded = () => {
   //   addNewTask(value);
@@ -55,15 +68,20 @@ function Task() {
         <input type="text" placeholder="What needs to be accompliced?" />
         <div className="tasks">
           {tasks.map((task, index) => (
-            <Task key={index} index={index} task={task}></Task>
+            <div>
+              <div>{task.title}</div>
+              <button value={task.title} onClick={RemoveTask}>
+                X
+              </button>
+            </div>
           ))}
         </div>
-        {/* <div>
-          <button onClick={showNewTaskAdded}></button>
-        </div> */}
+        <div className="deleteButton">
+          <button onClick={RemoveAllTasks}>Clear All The Tasks</button>
+        </div>
       </div>
     </div>
   );
 }
 
-export default Task;
+export default TaskList;
