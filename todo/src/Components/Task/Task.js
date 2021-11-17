@@ -77,7 +77,11 @@ function TaskList() {
           ))}
         </div>
         <div className="deleteButton">
-          <button onClick={RemoveAllTasks}>Clear All The Tasks</button>
+          {tasks.length !== 0 ? (
+            <button onClick={RemoveAllTasks}>Clear All The Tasks</button>
+          ) : (
+            <div />
+          )}
         </div>
       </div>
     </div>
