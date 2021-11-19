@@ -36,6 +36,7 @@ function TaskList() {
     },
   ]);
 
+  const [completed, setCompleted] = useState(false);
   // const [showNewTask, setShowNewTask] = useState(false);
 
   // //add newTask
@@ -56,6 +57,18 @@ function TaskList() {
     setTasks([]);
   };
 
+  const TaskCompleted = () => {
+    return (
+      <div className="checkbox">
+        <input
+          type="checkbox"
+          // value={value}
+          // onClick={TaskCompleted}
+        />
+      </div>
+    );
+  };
+
   // //the second container appears after the click on the 1st one
   // const showNewTaskAdded = () => {
   //   addNewTask(value);
@@ -70,12 +83,7 @@ function TaskList() {
         <div className="tasks">
           {tasks.map((task, index) => (
             <div>
-              <input
-                type="checkbox"
-                className="checkbox"
-                // value={value}
-                // onClick={}
-              />
+              <TaskCompleted />
               <div>{task.title}</div>
               <button value={task.title} onClick={RemoveTask}>
                 X
