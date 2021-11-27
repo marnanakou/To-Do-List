@@ -46,7 +46,7 @@ body {
   border: none;
   background: transparent;
 }
-//den fainetai to x button
+/* //den fainetai to x button */
 .tasks button {
   font-size: 17px;
   color: "black";
@@ -66,6 +66,8 @@ body {
   display: inline-block;
 }
 
-.checkbox:checked {
-  color: #ffd369;
+.checkbox [type="checkbox"]:checked {
+  -webkit-appearance: none;
+  background-color: white;
+  color: black;
 }

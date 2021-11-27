@@ -36,7 +36,6 @@ function TaskList() {
     },
   ]);
 
-  const [completed, setCompleted] = useState(false);
   // const [showNewTask, setShowNewTask] = useState(false);
 
   // //add newTask
@@ -58,12 +57,19 @@ function TaskList() {
   };
 
   const TaskCompleted = () => {
+    // const [taskcompleted, setTaskCompleted] = useState(false);
+    handleChange = (e) => {
+      let isChecked = e.target.checked;
+    };
     return (
       <div className="checkbox">
         <input
           type="checkbox"
-          // value={value}
-          // onClick={TaskCompleted}
+          onChange={handleChange}
+          style={{
+            textDecoration: taskcompleted ? "line-through" : " ",
+            color: taskcompleted ? "#5ab87d" : "",
+          }}
         />
       </div>
     );
