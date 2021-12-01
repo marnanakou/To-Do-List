@@ -2,7 +2,7 @@ body {
   background-color: black;
 }
 
-.header {
+/* .header {
   font-size: 45px;
   text-align: center;
   margin: 200px;
@@ -21,8 +21,8 @@ body {
   margin-left: 25em;
 }
 
-.container input {
-  width: 98%;
+.container input { */
+/* width: 98%;
   padding-top: 17px;
   border-style: none;
 }
@@ -44,10 +44,10 @@ body {
   text-transform: uppercase;
   color: #5ab87d;
   border: none;
-  background: transparent;
-}
+  background: transparent; */
+/* }
 /* //den fainetai to x button */
-.tasks button {
+/* .tasks button {
   font-size: 17px;
   color: "black";
   height: 25px;
@@ -64,10 +64,43 @@ body {
   margin: auto;
   line-height: 5em;
   display: inline-block;
-}
+} */
 
-.checkbox [type="checkbox"]:checked {
+/* .checkbox [type="checkbox"]:checked {
   -webkit-appearance: none;
   background-color: white;
   color: black;
+} */
+.task-container {
+  width: 40%;
+  height: 60px;
+  background-color: #ffffff;
+  margin: 17em;
+  margin-top: -9em;
+  border-style: none;
+  border-radius: 8px;
+  border: 3px solid;
+  margin-left: 25em;
 }
+
+.newTask-container input {
+  width: 98%;
+  padding-top: 17px;
+  border-style: none;
+  color: black;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.newTask-container input:focus {
+  outline: none;
+  border: none;
+}
+
+/* label input {
+  height: 18px;
+  width: 18px;
+  top: 0;
+  position: absolute;
+  background-color: #eee; */
+/* } */

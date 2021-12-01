@@ -1,11 +1,10 @@
-import TaskList from "./Components/Task/Task";
-import CreateNewTask from "./Components/NewTask/NewTask";
+import React from "react";
+import ToDoTask from "./Components/Task/Task";
 
 function App() {
   return (
     <div className="App">
-      <TaskList />
-      <CreateNewTask />
+      <ToDoTask />
     </div>
   );
 }
