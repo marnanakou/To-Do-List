@@ -74,7 +74,7 @@ function ToDoTask() {
       <div className="header">List-To-Do</div>
       <div className="container">
         <input type="text" placeholder="What needs to be accomplished?" />
-        {/* <CreateTask addTask={AddNewTask} /> */}
+        {<CreateTask addTask={AddNewTask} />}
         <div className="tasks">
           {tasks.map((task, index) => (
             <div key={index}>
