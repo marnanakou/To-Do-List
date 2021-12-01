@@ -1,5 +1,5 @@
 import React from "react";
-import ToDoTask from "./Components/Task/Task";
+import ToDoTask from "./Components/ToDoTask";
 
 function App() {
   return (
