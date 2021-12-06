@@ -9,6 +9,7 @@ const CreateTask = (props) => {
     e.preventDefault();
     if (!value) return;
     props.addTask(value);
+    console.log(value);
     setValue("");
   };
   return (

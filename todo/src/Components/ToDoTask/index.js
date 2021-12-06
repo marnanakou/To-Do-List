@@ -1,6 +1,35 @@
 import React, { useState } from "react";
-import CreateTask from "../Task";
 import "./style.css";
+
+//hide the container when task is completed and remove
+const TaskRow = (props) => {
+  const [completed, setCompleted] = useState(false);
+
+  const handleChange = (e) => {
+    let isChecked = e.target.checked;
+    if (isChecked) {
+      setCompleted(true);
+    }
+  };
+  return (
+    <div key={props.index}>
+      <div className="checkbox">
+        <input
+          type="checkbox"
+          onChange={handleChange}
+          style={{
+            textDecoration: completed ? "line-through" : "",
+            color: completed ? "#5ab87d" : "",
+          }}
+        />
+      </div>
+      <div>{props.taskObject.title}</div>
+      <button value={props.taskObject.title} onClick={props.removeTaskCallBack}>
+        X
+      </button>
+    </div>
+  );
+};
 
 function ToDoTask() {
   const [tasks, setTasks] = useState([
@@ -45,45 +74,38 @@ function ToDoTask() {
     setTasks([]);
   };
 
-  //hide the container when task is completed and remove
-  const HideTaskCompleted = () => {
-    const [completed, setCompleted] = useState(false);
-
-    const handleChange = (e) => {
-      let isChecked = e.target.checked;
-      if (isChecked) {
-        setCompleted(true);
-      }
-    };
-    return (
-      <div className="checkbox">
-        <input
-          type="checkbox"
-          onChange={handleChange}
-          style={{
-            textDecoration: completed ? "line-through" : "",
-            color: completed ? "#5ab87d" : "",
-          }}
-        />
-      </div>
-    );
+  //state of the input field
+  const [userInput, setUserInput] = useState();
+  const handleInputChange = (e) => {
+    console.log(e);
+    setUserInput(e.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!userInput) return;
+    AddNewTask(userInput);
+    setUserInput("");
+  };
   return (
     <div>
       <div className="header">List-To-Do</div>
       <div className="container">
-        <input type="text" placeholder="What needs to be accomplished?" />
-        {<CreateTask addTask={AddNewTask} />}
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={userInput}
+            placeholder="What needs to be accomplished?"
+            onChange={handleInputChange}
+          />
+        </form>
         <div className="tasks">
           {tasks.map((task, index) => (
-            <div key={index}>
-              {/* {HideTaskCompleted()} */}
-              <div>{task.title}</div>
-              <button value={task.title} onClick={RemoveTask}>
-                X
-              </button>
-            </div>
+            <TaskRow
+              taskObject={task}
+              index={index}
+              removeTaskCallBack={RemoveTask}
+            />
           ))}
         </div>
         <div className="deleteButton">
